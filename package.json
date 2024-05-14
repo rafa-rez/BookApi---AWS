@@ -1,0 +1,17 @@
+{
+  "name": "sprints-2-3-pb-aws-abril",
+  "version": "1.0.0",
+  "description": "Projeto realizado como avaliação das sprints 2 e 3 do programa de bolsas da Compass",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Rafael Alves, José Acerbi, Guilherme Padilha, João Victor de Morais",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0"
+  }
+}
