@@ -4,7 +4,7 @@
   "description": "Projeto realizado como avaliação das sprints 2 e 3 do programa de bolsas da Compass",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
     "start": "node server.js"
   },
   "author": "Rafael Alves, José Acerbi, Guilherme Padilha, João Victor de Morais",
