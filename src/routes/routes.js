@@ -27,6 +27,17 @@ router.get('/names', async (req, res) => {
     }
 })
 
+// - João Victor
+router.get('/overview', async (req, res) => {
+    try {
+        const data = await booksController.overview()
+        res.json(data)
+        console.log("deu certo")
+    } catch (error) {
+        console.error(error)
+        res.status(500).json({ error: 'Internal Server Error' })
+    }
+})
 
 module.exports = router
 
