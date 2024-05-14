@@ -6,4 +6,10 @@ async function bestSellers(){
     return data
 }
 
-module.exports = { bestSellers }
+ async function names(){
+    const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/names.json?author=brandon_sanderson&api-key=${process.env.API_KEY}`)
+     const data = await response.json()
+     return data
+}
+
+module.exports = { bestSellers, names }
