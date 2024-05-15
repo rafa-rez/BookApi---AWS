@@ -5,6 +5,8 @@ const router = express.Router()
 
 // - José
 router.get('/best-sellers', async (req, res) => {
+    //filtros
+    //age-group -- author -- contributor -- isbn -- offset -- price -- publisher -- title 
     try {
         const data = await booksController.bestSellers()
         res.json(data)
@@ -20,7 +22,7 @@ router.get('/names', async (req, res) => {
     try {
         const data = await booksController.names()
         res.json(data)
-        console.log("deu certo")
+        console.log("deu certo - names")
     } catch (error) {
         console.error(error)
         res.status(500).json({ error: 'Internal Server Error' })
@@ -32,7 +34,7 @@ router.get('/overview', async (req, res) => {
     try {
         const data = await booksController.overview()
         res.json(data)
-        console.log("deu certo")
+        console.log("deu certo - overview")
     } catch (error) {
         console.error(error)
         res.status(500).json({ error: 'Internal Server Error' })
