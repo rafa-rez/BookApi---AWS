@@ -1,9 +1,23 @@
 require('dotenv').config()
 
 // Função da rota "/best-sellers" desenvolvida por José
-async function bestSellers() { 
+async function bestSellers(params) { 
     try {
-        const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?author=Orwell&api-key=${process.env.API_KEY}`);
+        //queryParams filtra parâmetros nulos
+        //Acredito que será melhor se transformarmos esse código em uma função posteriormente
+        const queryParams = Object.keys(params)
+            .filter(key => params[key] !== undefined && params[key] !== null && params[key] !== '')
+            .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+            .join('&');
+
+        //Aqui a url é montada para a requisição
+        const apiKey = `api-key=${process.env.API_KEY}`;
+        const queryString = queryParams ? `${queryParams}&${apiKey}` : apiKey;
+
+        const url = `https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?${queryString}`;
+
+        const response = await fetch(url);
+
         if (!response.ok) {
             throw new Error('Erro ao obter a lista dos livros mais vendidos');
         }

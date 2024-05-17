@@ -80,20 +80,24 @@ document.addEventListener('DOMContentLoaded', function() {
     
     form.addEventListener('submit', async function(event) {
         event.preventDefault()
-        
+
+        const formData = new FormData(form);
+        const queryString = new URLSearchParams(formData).toString();
+        const url = `/books/best-sellers?${queryString}`;
+
         try {
-            const response = await fetch(`/books/best-sellers`, {
+            const response = await fetch(url, {
                 method: 'GET'
             });
-            
+
             if (!response.ok) {
-                throw new Error('Erro: ' + response.statusText)
+                throw new Error('Erro: ' + response.statusText);
             }
-            
-            const data = await response.json()
-            displayResults(data)
+
+            const data = await response.json();
+            displayResults(data);
         } catch (error) {
-            console.error('Erro:', error)
+            console.error('Erro:', error);
         }
     })
 })
