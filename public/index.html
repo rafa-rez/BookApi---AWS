@@ -1,13 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página de Busca</title>
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>Oi</h1>
-</body>
+
+<div class="container">
+    <div class="main-content">
+        <div class="form-selector">
+            <label for="formSelect">Selecione o Formulário:</label>
+            <select id="formSelect">
+                <option value="searchForm1">Formulário 1</option>
+                <option value="searchForm2">Formulário 2</option>
+                <option value="searchForm3">Formulário 3</option>
+            </select>
+        </div>
+        <div class="panel" id="searchForm1">
+            <h2>Formulário de Busca - Formulário 1</h2>
+            <form>
+                <ul>
+                    <li>
+                        <label for="authorName">Nome do Autor:</label>
+                        <input type="text" id="authorName" name="authorName">
+                    </li>
+                    <li>
+                        <input type="submit" value="Buscar">
+                        <button type="button" id="buscarTodosForm1">Buscar Todos</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+
+        <div class="panel" id="searchForm2">
+            <h2>Formulário de Busca - Formulário 2</h2>
+            <form>
+                <ul>
+                    <li>
+                        <label for="title">Título:</label>
+                        <input type="text" id="title" name="title">
+                    </li>
+                    <li>
+                        <label for="category">Categoria:</label>
+                        <input type="text" id="category" name="category">
+                    </li>
+                    <li>
+                        <label for="date">Data:</label>
+                        <input type="text" id="date" name="date">
+                    </li>
+                    <li>
+                        <input type="submit" value="Buscar">
+                        <button type="button" id="buscarTodosForm2">Buscar Todos</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+
+        <div class="panel" id="searchForm3">
+            <h2>Formulário de Busca - Formulário 3</h2>
+            <form>
+                <ul>
+                    <li>
+                        <label for="bookTitle">Título do Livro:</label>
+                        <input type="text" id="bookTitle" name="bookTitle">
+                    </li>
+                    <li>
+                        <input type="submit" value="Buscar">
+                        <button type="button" id="buscarTodosForm3">Buscar Todos</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+    <div class="results">
+        <!-- Resultados serão exibidos aqui -->
+    </div>
+</div>
 <script src="js/script.js"></script>
+
+</body>
 </html>
