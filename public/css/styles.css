@@ -1,3 +1,135 @@
-body{
-    background-color:antiquewhite;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1a5fb9;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 80%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.panel {
+    margin-bottom: 20px;
+    display: none;
+}
+
+.panel.active {
+    display: block;
+}
+
+.panel h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.panel ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.panel ul li {
+    margin-bottom: 20px;
+}
+
+.panel ul li label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.panel ul li input[type="text"], 
+.panel ul li input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.panel ul li input[type="submit"],
+.panel ul li button {
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-right: 10px;
+}
+
+.panel ul li button:hover {
+    background-color: #2980b9;
+}
+
+.results {
+    background-color: #ecf0f1;
+    padding: 40px;
+    border-radius: 10px;
+    margin-left: 20px;
+    overflow-y: auto;
+    flex: 2;
+}
+
+.result {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.result h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.result p {
+    margin-bottom: 0;
+    font-size: 1em;
+    color: #555;
+}
+
+.form-selector {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.form-selector label {
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.form-selector select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
 }
