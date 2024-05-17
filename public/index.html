@@ -16,11 +16,12 @@
                 <option value="searchForm1">Best Sellers</option>
                 <option value="searchForm2">Reviews</option>
                 <option value="searchForm3">Overviews</option>
+                <option value="searchForm4">Buscar Best Sellers List Names</option>
             </select>
         </div>
         <div class="panel active" id="searchForm1">
             <h2>Formulário de Busca - Best Sellers</h2>
-            <form>
+            <form action="/books/best-sellers" method="GET">
                 <ul>
                     <li>
                         <label for="author">Nome do Autor:</label>
@@ -55,8 +56,7 @@
                         <input type="text" id="title" name="title">
                     </li>
                     <li>
-                        <input type="submit" value="Buscar">
-                        <button type="button" id="buscarTodosForm1">Buscar Best Sellers List Names</button>
+                        <button type="submit" value="Buscar">Enviar</button>
                     </li>
                 </ul>
             </form>
@@ -79,8 +79,7 @@
                         <input type="text" id="authorForm2" name="authorForm2">
                     </li>
                     <li>
-                        <input type="submit" value="Buscar">
-                        <button type="button" id="buscarTodosForm2">Buscar Best Sellers List Names</button>
+                        <button type="submit" value="Buscar">Enviar</button>
                     </li>
                 </ul>
             </form>
@@ -95,12 +94,23 @@
                         <input type="text" id="publishedDate" name="publishedDate">
                     </li>
                     <li>
-                        <input type="submit" value="Buscar">
-                        <button type="button" id="buscarTodosForm3">Buscar Best Sellers List Names</button>
+                        <button type="submit" value="Buscar">Enviar</button>
                     </li>
                 </ul>
             </form>
         </div>
+
+        <div class="panel" id="searchForm4">
+            <h2>Buscar Best Sellers List Names</h2>
+            <form>
+                <ul>
+                    <li>
+                        <button type="submit" value="Buscar">Enviar</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+
     </div>
     <div class="results">
         <!-- Resultados serão exibidos aqui -->

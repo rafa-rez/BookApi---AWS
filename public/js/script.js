@@ -15,7 +15,6 @@ formSelect.addEventListener('change', function() {
 
 panels.forEach(panel => {
     panel.querySelector('form').addEventListener('submit', function(event) {
-        event.preventDefault();
         search(event);
     });
 
