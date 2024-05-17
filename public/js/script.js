@@ -13,7 +13,11 @@ formSelect.addEventListener('change', function() {
     });
 });
 
-panels.forEach(panel => {
+//----------
+// Os códigos comentados abaixo servem para gerar um exemplo de reposta no html, acho que ainda podem ser úteis para testes
+//----------
+
+/*panels.forEach(panel => {
     panel.querySelector('form').addEventListener('submit', function(event) {
         search(event);
     });
@@ -25,9 +29,9 @@ panels.forEach(panel => {
     buscarTodosButton.addEventListener('click', function() {
         search({ target: panel.querySelector('form') });
     });
-});
+});*/
 
-function search(event) {
+/*function search(event) {
     const form = event.target;
     const formData = new FormData(form);
     const formValues = {};
@@ -50,4 +54,46 @@ function search(event) {
 
         form.reset();
     }, 500); // Simulação de tempo de busca
+}*/
+function displayResults(data) {
+    resultsDiv.innerHTML = ''
+
+    const results = data.results || []
+
+    if (Array.isArray(results) && results.length > 0) {
+        const list = document.createElement('ul')
+
+        results.forEach(item => {
+            const listItem = document.createElement('li')
+            listItem.textContent = JSON.stringify(item)
+            list.appendChild(listItem)
+        });
+
+        resultsDiv.appendChild(list)
+    } else {
+        resultsDiv.textContent = 'Nenhum dado encontrado'
+    }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('#searchForm1 form')
+    
+    form.addEventListener('submit', async function(event) {
+        event.preventDefault()
+        
+        try {
+            const response = await fetch(`/books/best-sellers`, {
+                method: 'GET'
+            });
+            
+            if (!response.ok) {
+                throw new Error('Erro: ' + response.statusText)
+            }
+            
+            const data = await response.json()
+            displayResults(data)
+        } catch (error) {
+            console.error('Erro:', error)
+        }
+    })
+})
