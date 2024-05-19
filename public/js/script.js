@@ -101,3 +101,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     })
 })
+const form4 = document.querySelector('#searchForm4 form');
+    form4.addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const url = '/books/names';
+
+        try {
+            const response = await fetch(url, { method: 'GET' });
+
+            if (!response.ok) {
+                throw new Error('Erro: ' + response.statusText);
+            }
+
+            const data = await response.json();
+            displayResults(data);
+        } catch (error) {
+            console.error('Erro:', error);
+        }
+    });
+
