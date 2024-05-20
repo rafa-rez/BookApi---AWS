@@ -101,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     })
 })
+
 const form4 = document.querySelector('#searchForm4 form');
     form4.addEventListener('submit', async function(event) {
         event.preventDefault();
@@ -122,27 +123,32 @@ const form4 = document.querySelector('#searchForm4 form');
     });
 
 
-document.querySelector('#searchForm3 form').addEventListener('submit', async function(event) {
-    event.preventDefault(); // Impede o envio padrão do formulário
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('#searchForm3 form')
+        
+    form.addEventListener('submit', async function(event) {
+        event.preventDefault()
+        event.preventDefault(); // Impede o envio padrão do formulário
     
-    const form = event.target;
-    const formData = new FormData(form);
-    const queryString = new URLSearchParams(formData).toString();
+        const form = document.querySelector('#searchForm3 form')
+        const formData = new FormData(form);
+        const queryString = new URLSearchParams(formData).toString();
+        console.log(queryString);
 
-    const url = `/books/overview?${queryString}`;
+        const url = `/books/overview?${queryString}`;
     
-    try {
-        const response = await fetch(url, {
-            method: 'GET'
-        });
+        try {
+            const response = await fetch(url, { method: 'GET' });
     
-        if (!response.ok) {
-            throw new Error('Erro: ' + response.statusText);
+            if (!response.ok) {
+                throw new Error('Erro: ' + response.statusText);
+            }
+    
+            const data = await response.json();
+            console.log(data)
+            displayResults(data);
+        } catch (error) {
+            console.error('Erro:', error);
         }
-    
-        const data = await response.json();
-        displayResults(data);
-    } catch (error) {
-        console.error('Erro:', error);
-    }
+    })
 });
