@@ -55,23 +55,34 @@ formSelect.addEventListener('change', function() {
         form.reset();
     }, 500); // Simulação de tempo de busca
 }*/
+
 function displayResults(data) {
-    resultsDiv.innerHTML = ''
+    resultsDiv.innerHTML = '';
 
-    const results = data.results || []
+    console.log('Data recebido:', data);
+    const results = data && data.results !== undefined ? data.results : null;
+    console.log('Results extraído:', results);
 
-    if (Array.isArray(results) && results.length > 0) {
-        const list = document.createElement('ul')
+    if (results) {
+        if (Array.isArray(results)) {
+            const list = document.createElement('ul');
 
-        results.forEach(item => {
-            const listItem = document.createElement('li')
-            listItem.textContent = JSON.stringify(item)
-            list.appendChild(listItem)
-        });
+            results.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = JSON.stringify(item);
+                list.appendChild(listItem);
+            });
 
-        resultsDiv.appendChild(list)
+            resultsDiv.appendChild(list);
+        } else if (typeof results === 'object') {
+            const pre = document.createElement('pre');
+            pre.textContent = JSON.stringify(results, null, 2);
+            resultsDiv.appendChild(pre);
+        } else {
+            resultsDiv.textContent = results.toString();
+        }
     } else {
-        resultsDiv.textContent = 'Nenhum dado encontrado'
+        resultsDiv.textContent = 'Nenhum dado encontrado';
     }
 }
 
