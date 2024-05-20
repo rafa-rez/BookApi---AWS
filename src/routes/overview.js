@@ -3,8 +3,9 @@ const booksController = require('../controller/controller');
 const router = express.Router();
 
 router.get('/overview', async (req, res) => {
+    const params = req.query
     try {
-        const data = await booksController.overview();
+        const data = await booksController.overview(params);
         res.json(data);
         console.log("deu certo - overview");
     } catch (error) {

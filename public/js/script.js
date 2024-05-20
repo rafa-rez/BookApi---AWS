@@ -121,3 +121,28 @@ const form4 = document.querySelector('#searchForm4 form');
         }
     });
 
+
+document.querySelector('#searchForm3 form').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Impede o envio padrão do formulário
+    
+    const form = event.target;
+    const formData = new FormData(form);
+    const queryString = new URLSearchParams(formData).toString();
+
+    const url = `/books/overview?${queryString}`;
+    
+    try {
+        const response = await fetch(url, {
+            method: 'GET'
+        });
+    
+        if (!response.ok) {
+            throw new Error('Erro: ' + response.statusText);
+        }
+    
+        const data = await response.json();
+        displayResults(data);
+    } catch (error) {
+        console.error('Erro:', error);
+    }
+});
