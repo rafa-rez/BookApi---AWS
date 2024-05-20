@@ -1,5 +1,5 @@
 require('dotenv').config()
-
+const fetch = require('node-fetch');
 // Função da rota "/best-sellers" desenvolvida por José
 async function bestSellers(params) { 
     try {
