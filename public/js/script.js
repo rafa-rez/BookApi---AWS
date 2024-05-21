@@ -16,30 +16,34 @@ formSelect.addEventListener('change', function() {
 function displayResults(data) {
     resultsDiv.innerHTML = '';
 
+    // Verifica se há resultados, incluindo listas vazias
     const results = data && data.results !== undefined ? data.results : null;
 
-    if (results) {
+    if (results !== null) {
         if (Array.isArray(results)) {
-            const list = document.createElement('ul');
+            if (results.length > 0) {
+                const list = document.createElement('ul');
 
-            results.forEach(item => {
-                const listItem = document.createElement('li');
-                listItem.textContent = JSON.stringify(item);
-                list.appendChild(listItem);
-            });
+                results.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = JSON.stringify(item);
+                    list.appendChild(listItem);
+                });
 
-            resultsDiv.appendChild(list);
+                resultsDiv.appendChild(list);
+            } else {
+                resultsDiv.textContent = 'Nenhum dado encontrado';
+            }
         } else if (typeof results === 'object') {
             const pre = document.createElement('pre');
             pre.textContent = JSON.stringify(results, null, 2);
             resultsDiv.appendChild(pre);
-        } else {
-            resultsDiv.textContent = results.toString();
-        }
+        } 
     } else {
         resultsDiv.textContent = 'Nenhum dado encontrado';
     }
 }
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('#searchForm1 form')
