@@ -12,6 +12,7 @@ O projeto consiste em consumir rotas de uma API, utilizando parâmetros fornecid
 
 ## 📁 Estrutura do projeto
 
+```plaintext
 sprints-2-3-pb-aws-abril/
 │
 ├── node_modules/           # Dependências do projeto gerenciadas pelo npm
@@ -25,7 +26,10 @@ sprints-2-3-pb-aws-abril/
 │
 ├── src/                    # Código-fonte da aplicação
 │   ├── controller/
-│   │   └── controller.js   # Controlador principal com a lógica de negócios
+│   │   └── bestSellers.js  # Controlador da rota bestSellers
+│   │   └── names.js        # Controlador da rota names
+│   │   └── overview.js     # Controlador da rota overview
+│   │   └── reviews.js      # Controlador da rota review
 │   ├── routes/             # Definições de rotas da aplicação
 │   │   ├── best-sellers.js # Rota para best-sellers
 │   │   ├── names.js        # Rota para nomes
@@ -41,7 +45,7 @@ sprints-2-3-pb-aws-abril/
 ├── package.json            # Arquivo de configuração do npm com metadados do projeto
 ├── README.md               # Documentação do projeto (este arquivo)
 └── server.js               # Ponto de entrada da aplicação
-
+```
 ***
 
 ## 🧠 Lógica do projeto
