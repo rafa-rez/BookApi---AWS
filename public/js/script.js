@@ -162,4 +162,34 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Erro:', error);
         }
     })
+}); 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('#searchForm2 form')
+        
+    form.addEventListener('submit', async function(event) {
+        event.preventDefault()
+    
+        const form = document.querySelector('#searchForm2 form')
+        const formData = new FormData(form);
+        const queryString = new URLSearchParams(formData).toString();
+        console.log(queryString);
+
+        const url = `/books/reviews?${queryString}`; 
+        console.log(url); 
+    
+        try {
+            const response = await fetch(url, { method: 'GET' });
+    
+            if (!response.ok) {
+                throw new Error('Erro: ' + response.statusText);
+            }
+    
+            const data = await response.json();
+            console.log(data)
+            displayResults(data);
+        } catch (error) {
+            console.error('Erro:', error);
+        }
+    })
 });
