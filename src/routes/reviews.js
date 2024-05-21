@@ -7,7 +7,6 @@ router.get('/reviews', async (req, res) => {
     try {
         const data = await booksController.reviews(params); 
         res.json(data);
-        console.log(params);
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Internal Server Error' });
