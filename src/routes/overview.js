@@ -1,5 +1,5 @@
 const express = require('express');
-const booksController = require('../controller/controller');
+const booksController = require('../controller/overview');
 const router = express.Router();
 
 router.get('/overview', async (req, res) => {
