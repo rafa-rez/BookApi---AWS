@@ -45,7 +45,7 @@ sprints-2-3-pb-aws-abril/
 ├── package.json            # Arquivo de configuração do npm com metadados do projeto
 ├── README.md               # Documentação do projeto (este arquivo)
 └── server.js               # Ponto de entrada da aplicação
-
+```
 ***
 
 ## 🧠 Lógica do projeto
