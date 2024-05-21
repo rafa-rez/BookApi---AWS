@@ -1,30 +1,24 @@
 require('dotenv').config()
 const fetch = require('node-fetch')
+const services = require('../services/service')
 
 async function reviews(params) { 
-
     try { 
-        // Tratamento inicial dos parâmetros (Filtragem); 
-        const queryParams = Object.keys(params)
-        .filter(key => params[key] !== undefined && params[key] !== null && params[key] !== '')
-        .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
-        .join('&'); 
+        const queryString = services.createURL(params)
 
-        // Construção da URL 
-        const apiKey = `api-key=${process.env.API_KEY}`;
-        const queryString = queryParams ? `${queryParams}&${apiKey}` : apiKey; 
-        const url = `https://api.nytimes.com/svc/books/v3/reviews.json?${queryString}`; 
+        const url = `https://api.nytimes.com/svc/books/v3/reviews.json?${queryString}`
 
-        // Realizando a requisição; 
-        const response = await fetch (url); 
+        const response = await fetch(url)
+
         if (!response.ok) {
-            throw new Error('Erro ao obter resenhas dos livros');
+            throw new Error('Erro ao obter resenhas dos livros')
         }
-        const data = await response.json();
-        return data;
+
+        const data = await response.json()
+        return data
     } catch (error) {
-        console.error('Erro ao obter resenhas dos livros:', error.message);
-        return { error: error.message };
+        console.error('Erro ao obter resenhas dos livros:', error.message)
+        return { error: error.message }
     }
 }
 
