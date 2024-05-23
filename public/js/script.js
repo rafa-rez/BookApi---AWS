@@ -10,8 +10,8 @@ formSelect.addEventListener('change', function() {
         } else {
             panel.classList.remove('active')
         }
-    });
-});
+    })
+})
 
 function displayResults(data) {
     resultsDiv.innerHTML = ''
@@ -26,11 +26,11 @@ function displayResults(data) {
                 const listItem = document.createElement('li')
                 listItem.textContent = JSON.stringify(item)
                 list.appendChild(listItem)
-            });
+            })
 
-            resultsDiv.appendChild(list);
+            resultsDiv.appendChild(list)
         } else if (typeof results === 'object') {
-            const pre = document.createElement('pre');
+            const pre = document.createElement('pre')
             pre.textContent = JSON.stringify(results, null, 2)
             resultsDiv.appendChild(pre)
         } else {
@@ -54,14 +54,14 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             const response = await fetch(url, {
                 method: 'GET'
-            });
+            })
 
             if (!response.ok) {
                 throw new Error('Erro: ' + response.statusText)
             }
 
             const data = await response.json()
-            displayResults(data);
+            displayResults(data)
         } catch (error) {
             console.error('Erro:', error)
         }
@@ -86,7 +86,7 @@ const form4 = document.querySelector('#searchForm4 form')
         } catch (error) {
             console.error('Erro:', error)
         }
-    });
+    })
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -94,13 +94,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
     form.addEventListener('submit', async function(event) {
         event.preventDefault()
-        event.preventDefault() // Impede o envio padrão do formulário
     
         const form = document.querySelector('#searchForm3 form')
-        const formData = new FormData(form);
+        const formData = new FormData(form)
         const queryString = new URLSearchParams(formData).toString()
 
-        const url = `/books/overview?${queryString}`;
+        const url = `/books/overview?${queryString}`
     
         try {
             const response = await fetch(url, { method: 'GET' })
@@ -124,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault()
     
         const form = document.querySelector('#searchForm2 form')
-        const formData = new FormData(form);
+        const formData = new FormData(form)
         const queryString = new URLSearchParams(formData).toString()
 
         const url = `/books/reviews?${queryString}`
@@ -142,4 +141,4 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Erro:', error)
         }
     })
-});
+})
