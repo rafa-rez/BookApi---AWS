@@ -6,7 +6,10 @@ Avaliação da segunda e terceira sprints do programa de bolsas Compass UOL para
 
 ## Descrição do projeto
 
-O projeto consiste em consumir rotas de uma API, utilizando parâmetros fornecidos pelo usuário ou não, utilizando da tecnologia Docker para rodar o projeto e o mesmo deve ter sido passado para uma EC2 dos serviços AWS.
+O projeto consiste em consumir rotas da Books API, disponibilizada pela New York Times. É utilizado NodeJS para desenvolver a lógica do back-end e Docker para realizar a containerização do projeto. A aplicação é acessível através do deploy de uma instância EC2 na AWS.
+
+![Diagrama da arquitetura](Arquitetura.jpg)
+
 
 ***
 
@@ -43,7 +46,9 @@ sprints-2-3-pb-aws-abril/
 ├── Dockerfile              # Arquivo de configuração do docker
 ├── package-lock.json       # Arquivo de bloqueio de versão gerado pelo npm
 ├── package.json            # Arquivo de configuração do npm com metadados do projeto
-├── README.md               # Documentação do projeto (este arquivo)
+├── docs
+│   ├── README.md           # Documentação do projeto
+│   └── Arquitetura.jpg     # Imagem utilizada no README
 └── server.js               # Ponto de entrada da aplicação
 ```
 ***
@@ -58,12 +63,46 @@ sprints-2-3-pb-aws-abril/
 
 ***
 
-## 🛠️ Como utilizar o sistema
+## 🛠️ Como rodar o sistema
 
-1. Clone o repositório: 'git clone https://github.com/Compass-pb-aws-2024-ABRIL/sprints-2-3-pb-aws-abril.git'
-2. Construa sua imagem: 'docker build -t nome-desejado'
-3. Construa o contâiner: 'docker run -p 5000:5000 nome-desejado'
-4. Após seguir os passos acima, você pode acessar o sistema em 'http://localhost:5000'
+1. Crie uma instância EC2.
+2. Atualize os pacotes: `sudo yum update -y`
+3. Instale o git: `sudo yum install git -y`
+4. Instalar o npm: `sudo yum install npm -y`
+5. Instale o docker: `sudo yum install docker -y`
+6. Execute os seguintes comandos para iniciar o docker corretamente: 
+	`sudo systemctl start docker`
+	`sudo systemctl enable docker`
+7. Instalar docker compose: `sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep 'tag_name' | cut -d\" -f4)/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose`
+8. Aplique permissões ao docker compose: `sudo chmod +x /usr/local/bin/docker-compose`
+9. Reinicie a instância para as mudanças surtirem efeito
+10. Clone o repositorio: `git clone https://github.com/Compass-pb-aws-2024-ABRIL/sprint-1-pb-aws-abril`
+11. Navege até o diretório e altere para a branch grupo_1: `git chekout grupo_1`
+12. Instale os pacotes npm: `npm install`
+13. Crie um arquivo .env que conterá a variável de ambiente: `echo API_KEY=[API KEY] > .env`
+14. Para iniciar o container, execute: `docker-compose up`
+15. A aplicação é executada na porta `[PublicIP]:5000`
+
+***
+
+## 🖱️ Como utilizar o sistema
+1. Acesse um dos IPs abaixo:
+    I.
+    II.
+    III.
+    IV.
+2. O usuário possui a opção de selecionar dentre 4 opções de busca.
+3. Na opção 'reviews', é necessário incluir ao menos 1 parâmetro.
+4. É recomendado enviar apenas 5 requisições por minuto, com um espaçamento mínimo de 12 segundos entre elas, para garantir que a requisição seja corretamente consumida. Não respeitar essas recomendações cria uma chance em que requisição não seja corretamente tratada, não retornando nenhum valor.
+
+***
+
+## ✅ Tecnologias utilizadas
+
+• `NodeJS`
+• `HTML`
+• `CSS`
+• `Docker`
 
 ***
 
