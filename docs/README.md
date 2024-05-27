@@ -77,19 +77,19 @@ sprints-2-3-pb-aws-abril/
 	`sudo systemctl enable docker`
 7. Instalar docker compose: `sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep 'tag_name' | cut -d\" -f4)/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose`
 8. Aplique permissões ao docker compose: `sudo chmod +x /usr/local/bin/docker-compose`
-9. Reinicie a instância para as mudanças surtirem efeito
-10. Clone o repositorio: `git clone https://github.com/Compass-pb-aws-2024-ABRIL/sprint-1-pb-aws-abril`
+9. Reinicie o terminal para as mudanças surtirem efeito
+10. Clone o repositorio: `git clone https://github.com/Compass-pb-aws-2024-ABRIL/sprints-2-3-pb-aws-abril.git`
 11. Navege até o diretório e altere para a branch grupo_1: `git chekout grupo_1`
 12. Instale os pacotes npm: `npm install`
 13. Crie um arquivo .env que conterá a variável de ambiente: `echo API_KEY=[API KEY] > .env`
-14. Para iniciar o container, execute: `docker-compose up`
+14. Para iniciar o container, execute: `sudo docker-compose up`
 15. A aplicação é executada na porta `[PublicIP]:5000`
 
 ***
 
 ## 🖱️ Como utilizar o sistema
 1. Acesse um dos IPs abaixo:
-- I.
+- I. http://184.73.80.194:5000
 - II.
 - III.
 - IV.
@@ -105,6 +105,7 @@ sprints-2-3-pb-aws-abril/
 - `HTML`
 - `CSS`
 - `Docker`
+- `AWS - EC2`
 
 ***
 
