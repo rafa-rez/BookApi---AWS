@@ -40,15 +40,17 @@ sprints-2-3-pb-aws-abril/
 │   │   └── reviews.js      # Rota para reviews
 │   └── services/
 │       └── service.js      # Serviços utilizados pelos controladores
+│ 
+├── docs/
+│   ├── README.md           # Documentação do projeto
+│   └── Arquitetura.jpg     # Imagem utilizada no README
+│ 
 ├── .dockerignore           # Arquivo para ignorar arquivos e pastas no docker
 ├── .env                    # Arquivo de configuração de variáveis de ambiente
 ├── .gitignore              # Arquivo para ignorar arquivos e pastas no git
 ├── Dockerfile              # Arquivo de configuração do docker
 ├── package-lock.json       # Arquivo de bloqueio de versão gerado pelo npm
 ├── package.json            # Arquivo de configuração do npm com metadados do projeto
-├── docs
-│   ├── README.md           # Documentação do projeto
-│   └── Arquitetura.jpg     # Imagem utilizada no README
 └── server.js               # Ponto de entrada da aplicação
 ```
 ***
@@ -87,10 +89,10 @@ sprints-2-3-pb-aws-abril/
 
 ## 🖱️ Como utilizar o sistema
 1. Acesse um dos IPs abaixo:
-    I.
-    II.
-    III.
-    IV.
+- I.
+- II.
+- III.
+- IV.
 2. O usuário possui a opção de selecionar dentre 4 opções de busca.
 3. Na opção 'reviews', é necessário incluir ao menos 1 parâmetro.
 4. É recomendado enviar apenas 5 requisições por minuto, com um espaçamento mínimo de 12 segundos entre elas, para garantir que a requisição seja corretamente consumida. Não respeitar essas recomendações cria uma chance em que requisição não seja corretamente tratada, não retornando nenhum valor.
@@ -99,20 +101,22 @@ sprints-2-3-pb-aws-abril/
 
 ## ✅ Tecnologias utilizadas
 
-• `NodeJS`
-• `HTML`
-• `CSS`
-• `Docker`
+- `NodeJS`
+- `HTML`
+- `CSS`
+- `Docker`
 
 ***
 
 ## ❌ Dificuldades no projeto
 
-- Dificuldades ainda sendo encontradas..
+- Distribuição de tarefas de forma igualitária para que todos os desenvolvedores enfrentassem desafios que os aprimorassem e ainda não se senstissem nem deixados de lado quanto sobrecarregados.
+- Impasse na escolha de tecnologias a serem utilizadas durante o projeto.
+- Obstáculos na realização do deploy na AWS.
 
 ## 👨‍💻 Developers do projeto.
 
-- Rafael Alves Silva Rezende
-- José Acerbi Almeida Neto
-- Guilherme Padilha Jacon
-- João Victor de Morais Reis
+- [Rafael Alves Silva Rezende](https://github.com/rafa-rez)
+- [José Acerbi Almeida Neto](https://github.com/JoseJaan)
+- [Guilherme Padilha Jacon](https://github.com/guilhermepjacon)
+- [João Victor de Morais Reis](https://github.com/jvmoraisreis)
