@@ -1,9 +1,3 @@
-# Avaliação Sprint 2 - 3
-
-Avaliação da segunda e terceira sprints do programa de bolsas Compass UOL para formação em machine learning para AWS.
-
-***
-
 ## Descrição do projeto
 
 O projeto consiste em consumir rotas da Books API, disponibilizada pela New York Times. É utilizado NodeJS para desenvolver a lógica do back-end e Docker para realizar a containerização do projeto. A aplicação é acessível através do deploy de uma instância EC2 na AWS.
@@ -89,10 +83,7 @@ sprints-2-3-pb-aws-abril/
 
 ## 🖱️ Como utilizar o sistema
 1. Acesse um dos IPs abaixo:
-- I. http://184.73.80.194:5000
-- II.
-- III.
-- IV.
+- I. http://184.73.80.194:5000    -- Atualmente não disponível
 2. O usuário possui a opção de selecionar dentre 4 opções de busca.
 3. Na opção 'reviews', é necessário incluir ao menos 1 parâmetro.
 4. É recomendado enviar apenas 5 requisições por minuto, com um espaçamento mínimo de 12 segundos entre elas, para garantir que a requisição seja corretamente consumida. Não respeitar essas recomendações cria uma chance em que requisição não seja corretamente tratada, não retornando nenhum valor.
@@ -119,5 +110,3 @@ sprints-2-3-pb-aws-abril/
 
 - [Rafael Alves Silva Rezende](https://github.com/rafa-rez)
 - [José Acerbi Almeida Neto](https://github.com/JoseJaan)
-- [Guilherme Padilha Jacon](https://github.com/guilhermepjacon)
-- [João Victor de Morais Reis](https://github.com/jvmoraisreis)
